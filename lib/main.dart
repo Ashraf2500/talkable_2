@@ -29,13 +29,16 @@ void main()async {
 //}
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 import 'package:talkable_2/presentation/screens/educationScreen/data/datasource/video_dataSource.dart';
 import 'package:talkable_2/presentation/screens/educationScreen/data/repositoryimpl/video_repo.dart';
 import 'package:talkable_2/presentation/screens/educationScreen/domain/usecase/get_videos_usecase.dart';
 import 'package:talkable_2/presentation/screens/educationScreen/presentation/video_view_model.dart';
+import 'package:talkable_2/presentation/screens/private_session/manager/sign_detection_cubit.dart';
+import 'package:talkable_2/presentation/screens/private_session/view/sign_detection_screen.dart';
 import 'package:talkable_2/presentation/screens/splash/splash_screen.dart';
-import 'package:talkable_2/presentation/screens/translationScreen/translate_manager/translate_manager_cubit.dart';
+import 'package:talkable_2/presentation/screens/translationScreen/translation_screen_manager/translate_manager/translate_manager_cubit.dart';
 import 'core/DI/di.dart';
 import 'core/cashe/prefs_handler.dart';
 import 'core/utils/routes_manager.dart';
@@ -60,9 +63,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-        BlocProvider(
-        create: (_) => TranslateManagerCubit(),
-        )
+
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 import 'package:talkable_2/core/utils/assets_manager.dart';
+import 'package:talkable_2/core/utils/strings_manager.dart';
 
 class EducationScreen extends StatefulWidget {
   @override
@@ -15,7 +16,7 @@ class _EducationScreenState extends State<EducationScreen> {
   bool isLoading = true;
 
   Future<void> fetchVideos() async {
-    final url = Uri.parse('http://127.0.0.1:5000/get_videos');
+    final url = Uri.parse('${StringsManager.baseUrl}/get_videos');
     try {
       final response = await http.get(url);
 

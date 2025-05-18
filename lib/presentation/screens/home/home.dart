@@ -81,20 +81,26 @@ class HomeScreen extends StatelessWidget {
             margin: EdgeInsets.symmetric(
                 horizontal: 20
             ),
-            child: Row(
-                children: [
-                  Expanded(
-                    child: Text("Private Session",style: TextStyle(
-                      color: ColorsManager.White,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 24,
+            child: InkWell(
+              onTap: (){
+                Navigator.pushNamed(context,RoutesManager.privateSession);
+
+              },
+              child: Row(
+                  children: [
+                    Expanded(
+                      child: Text("Private Session",style: TextStyle(
+                        color: ColorsManager.White,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 24,
+                      )),
+                    ),
+                    Expanded(child: CircleAvatar(
+                      radius: 30,
+                      backgroundImage: AssetImage(AssetsManager.privateSession),
                     )),
-                  ),
-                  Expanded(child: CircleAvatar(
-                    radius: 30,
-                    backgroundImage: AssetImage(AssetsManager.privateSession),
-                  )),
-                ]),
+                  ]),
+            ),
           ),
         ),
         Spacer(),

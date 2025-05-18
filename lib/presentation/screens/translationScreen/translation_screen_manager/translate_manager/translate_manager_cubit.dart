@@ -1,9 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
+import 'package:talkable_2/core/utils/strings_manager.dart';
+import 'package:talkable_2/presentation/screens/translationScreen/Translate_model/Sign_video.dart';
 
-import '../../../../core/utils/strings_manager.dart';
-import '../Translate_model/Sign_video.dart';
 
 part 'translate_manager_state.dart';
 
@@ -22,8 +22,6 @@ class TranslateManagerCubit extends Cubit<TranslateManagerState> {
       );
 
       final data = response.data;
-
-      print("ashraf : data of videos ${data}");
 
       if (data.containsKey('sign_videos')) {
         final signVideos = (data['sign_videos'] as List)

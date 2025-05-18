@@ -36,6 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return BlocProvider(
       create: (context) => getIt<SignInViewModelCubit>(),
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: Color(0xFFFFFFFF),
         body: Center(
           child: Padding(
